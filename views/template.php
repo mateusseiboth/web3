@@ -98,7 +98,7 @@
           <a class="nav-link active" aria-current="page" href="<?php echo APP.'noticia/listar' ?>">Notícia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo APP.'noticia/listar' ?>">Autor</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo APP.'autor/listar' ?>">Autor</a>
         </li>
 
       </ul>

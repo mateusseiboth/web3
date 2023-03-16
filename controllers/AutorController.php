@@ -1,15 +1,15 @@
 <?php
-  class AutorController {
+  class AutorController extends Controller {
     function editar($id) {
       $model = new Autor();
       $autor = $model->getById($id);
-      include_once "views/frmAutor.php";
+      $this->view('frmAutor', compact('autor'));
     }
 
     function listar() {
       $model = new Autor();
       $autores = $model->read();
-      include_once "views/listagemAutor.php";
+      $this->view('listagemAutor', compact('autores'));
     }
 
     function novo() {
@@ -17,8 +17,7 @@
       $autor['id'] = 0;
       $autor['nome'] = "";
       $autor['email'] = "";
-      include_once "views/frmAutor.php";
-
+      $this->view("frmAutor", compact('autor'));
     }
 
     function salvar() {
@@ -32,13 +31,13 @@
       } else {
         $model->update($autor);
       }
-      header('location: '.APP.'autor/listar');
+      $this->redirect("autor/listar");
     }
 
     function excluir($id) {
       $model = new Autor();
       $model->delete($id);
-      header('location: '.APP.'autor/listar');
+      $this->redirect('autor/listar');
     }
   }
  ?>

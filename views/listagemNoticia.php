@@ -24,7 +24,7 @@
           <tr>
             <td>{$noticia['id']}</td>
             <td>{$noticia['titulo']}</td>
-            <td>{$noticia['autor']}</td>
+            <td>{$noticia['autor_nome']}</td>
             <td>$data</td>
             <td>{$noticia['categoria_descricao']}</td>
             <td><a class='btn btn-primary' href='$pathEditar/{$noticia['id']}'>+</a></td>

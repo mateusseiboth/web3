@@ -14,8 +14,14 @@
   </div>
   <div class="mb-3">
     <label for="autor" class="form-label">Autor</label>
-    <input class='form-control' type="text" name="autor" value="<?php echo $noticia['autor']; ?>">
-  </div>
+    <select class="form-select" name="autor_id" >
+      <?php
+        foreach ($autores as $autor) {
+          $selected = $autor['id']==$noticia['autor_id']?'selected':'';
+          echo "<option $selected value='{$autor['id']}'>{$autor['nome']}</option>";
+        }
+       ?>
+    </select>  </div>
   <div class="mb-3">
     <label for="autor" class="form-label">Data</label>
     <input class='form-control' type="date" name="data" value="<?php echo $noticia['data']; ?>">

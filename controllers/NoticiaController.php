@@ -6,7 +6,9 @@
       $noticia = $model->getById($id);
       $modelCategoria = new Categoria();
       $categorias = $modelCategoria->read();
-      $this->view('frmNoticia', compact('noticia', 'categorias'));
+      $modelAutor = new Autor();
+      $autores = $modelAutor->read();
+      $this->view('frmNoticia', compact('noticia', 'categorias', 'autores'));
     }
 
     function listar() {
@@ -25,7 +27,9 @@
       $noticia['categoria_id'] = 0;
       $modelCategoria = new Categoria();
       $categorias = $modelCategoria->read();
-      $this->view('frmNoticia', compact('noticia', 'categorias'));
+      $modelAutor = new Autor();
+      $autores = $modelAutor->read();
+      $this->view('frmNoticia', compact('noticia', 'categorias', 'autores'));
     }
 
     function salvar() {
@@ -33,7 +37,7 @@
       $noticia['id'] = $_POST['id'];
       $noticia['titulo'] = $_POST['titulo'];
       $noticia['descricao'] = $_POST['descricao'];
-      $noticia['autor'] = $_POST['autor'];
+      $noticia['autor_id'] = $_POST['autor_id'];
       $noticia['data'] = $_POST['data'];
       $noticia['categoria_id'] = $_POST['categoria_id'];
       $model = new Noticia();
