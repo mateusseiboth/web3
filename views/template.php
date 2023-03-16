@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
-    <title>Fixed top navbar example · Bootstrap v5.3</title>
+    <title>Carrinhos maravilhosos v0.3</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
 
@@ -85,20 +85,20 @@
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="<?php echo APP; ?>">News</a>
+    <a class="navbar-brand" href="<?php echo APP; ?>">CutuCar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo APP.'categoria/listar' ?>">Categoria</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo APP.'vagas/listar' ?>">Vagas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo APP.'noticia/listar' ?>">Notícia</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo APP.'tickets/listar' ?>">Tickets</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo APP.'autor/listar' ?>">Autor</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo APP.'admin/index' ?>">Painel admin</a>
         </li>
 
       </ul>

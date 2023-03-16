@@ -1,15 +1,16 @@
 <?php
-  class AutorController extends Controller {
+  class AdminController extends Controller {
     function editar($id) {
       $model = new Autor();
       $autor = $model->getById($id);
       $this->view('frmAutor', compact('autor'));
     }
 
-    function listar() {
-      $model = new Autor();
-      $autores = $model->read();
-      $this->view('listagemAutor', compact('autores'));
+    function index() {
+      echo "Cheguei";
+      //$model = new Autor();
+      //$autores = $model->read();
+      //$this->view('listagemAutor', compact('autores'));
     }
 
     function novo() {
