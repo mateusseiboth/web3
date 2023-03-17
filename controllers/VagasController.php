@@ -1,5 +1,5 @@
 <?php
-  class NoticiaController extends Controller {
+  class VagasController extends Controller {
 
     function editar($id) {
       $model = new Noticia();
