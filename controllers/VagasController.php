@@ -12,13 +12,13 @@
       $vaga['estado'] = true;
       $model = new Vaga();
       $model->create($vaga);
-      $this->redirect("vaga/listar");
+      $this->redirect("vagas/listar");
     }
 
     function excluir($id) {
       $model = new Vaga();
       $model->delete($id);
-      $this->redirect('vaga/listar');
+      $this->redirect('vagas/listar');
     }
   }
  ?>
