@@ -6,7 +6,7 @@
   $tipoApagar = APP . 'tipo/excluir';
   $tipoEditar = APP . 'tipo/editar';
   $tipoNovo = APP . 'tipo/novo';
-  $vagaNova = APP . 'vagas/nova';
+  $vagaNova = APP . 'vagas/novo';
 echo "
   <div class='col-lg-6 col-md-6 col-sm-12'>
     <table class='table'>
