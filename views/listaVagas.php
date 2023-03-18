@@ -5,13 +5,14 @@
 foreach ($vagas as $vaga) {
   $pathEditar = APP . 'autor/editar';
   $pathExcluir = APP . 'autor/excluir';
+  $vaga['estado'] ? $cor = 'green' : $cor = 'red';
 
 echo "
-  <div class='col-sm-4' style='margin-top: 2rem;'>
+  <div class='col-sm-2' style='margin-top: 2rem;'>
     <div class='card'>
       <div class='card-body' style='text-align: center;'>
         <h5 class='card-title'>Vaga número {$vaga['id']}</h5>
-        <button class='btn'><i class='bi bi-car-front-fill' style='font-size: 8rem; color: green;'></i></button>
+        <button class='btn'><i class='bi bi-car-front-fill' style='font-size: 8rem; color: {$cor};'></i></button>
       </div>
     </div>
   </div>
