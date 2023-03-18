@@ -1,11 +1,5 @@
 <?php
   class VagasController extends Controller {
-    function editar($id) {
-      $model = new Autor();
-      $autor = $model->getById($id);
-      $this->view('frmAutor', compact('autor'));
-    }
-
     function listar() {
       $model = new Vaga();
       $vagas = $model->read();
@@ -19,23 +13,17 @@
     }
 
     function salvar() {
-      $autor = array();
-      $autor['id'] = $_POST['id'];
-      $autor['nome'] = $_POST['nome'];
-      $autor['email'] = $_POST['email'];
-      $model = new Autor();
-      if ($autor['id'] == 0) {
-        $model->create($autor);
-      } else {
-        $model->update($autor);
-      }
-      $this->redirect("autor/listar");
+      $vaga = array();
+      $vaga['estado'] = true;
+      $model = new Vaga();
+      $model->create($vaga);
+      $this->redirect("vaga/listar");
     }
 
     function excluir($id) {
-      $model = new Autor();
+      $model = new Vaga();
       $model->delete($id);
-      $this->redirect('autor/listar');
+      $this->redirect('vaga/listar');
     }
   }
  ?>
