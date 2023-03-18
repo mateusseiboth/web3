@@ -1,44 +1,58 @@
 <?php
   class AdminController extends Controller {
+
     function editar($id) {
-      $model = new Autor();
-      $autor = $model->getById($id);
-      $this->view('frmAutor', compact('autor'));
+      $model = new Noticia();
+      $noticia = $model->getById($id);
+      $modelCategoria = new Categoria();
+      $categorias = $modelCategoria->read();
+      $modelAutor = new Autor();
+      $autores = $modelAutor->read();
+      $this->view('frmNoticia', compact('noticia', 'categorias', 'autores'));
     }
 
-    function index() {
-      echo "Cheguei";
-      //$model = new Autor();
-      //$autores = $model->read();
-      //$this->view('listagemAutor', compact('autores'));
+    function listar() {
+      $model = new Noticia();
+      $noticias = $model->read();
+      $this->view('listagemNoticia', compact('noticias'));
     }
 
     function novo() {
-      $autor = array();
-      $autor['id'] = 0;
-      $autor['nome'] = "";
-      $autor['email'] = "";
-      $this->view("frmAutor", compact('autor'));
+      $noticia = array();
+      $noticia['id'] = 0;
+      $noticia['titulo'] = "";
+      $noticia['descricao'] = "";
+      $noticia['autor'] = "";
+      $noticia['data'] = "";
+      $noticia['categoria_id'] = 0;
+      $modelCategoria = new Categoria();
+      $categorias = $modelCategoria->read();
+      $modelAutor = new Autor();
+      $autores = $modelAutor->read();
+      $this->view('frmNoticia', compact('noticia', 'categorias', 'autores'));
     }
 
     function salvar() {
-      $autor = array();
-      $autor['id'] = $_POST['id'];
-      $autor['nome'] = $_POST['nome'];
-      $autor['email'] = $_POST['email'];
-      $model = new Autor();
-      if ($autor['id'] == 0) {
-        $model->create($autor);
+      $noticia = array();
+      $noticia['id'] = $_POST['id'];
+      $noticia['titulo'] = $_POST['titulo'];
+      $noticia['descricao'] = $_POST['descricao'];
+      $noticia['autor_id'] = $_POST['autor_id'];
+      $noticia['data'] = $_POST['data'];
+      $noticia['categoria_id'] = $_POST['categoria_id'];
+      $model = new Noticia();
+      if ($noticia['id'] == 0) {
+        $model->create($noticia);
       } else {
-        $model->update($autor);
+        $model->update($noticia);
       }
-      $this->redirect("autor/listar");
+      $this->redirect("noticia/listar");
     }
 
     function excluir($id) {
-      $model = new Autor();
+      $model = new Noticia();
       $model->delete($id);
-      $this->redirect('autor/listar');
+      $this->view('noticia/listar');
     }
   }
  ?>

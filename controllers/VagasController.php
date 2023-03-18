@@ -1,58 +1,43 @@
 <?php
   class VagasController extends Controller {
-
     function editar($id) {
-      $model = new Noticia();
-      $noticia = $model->getById($id);
-      $modelCategoria = new Categoria();
-      $categorias = $modelCategoria->read();
-      $modelAutor = new Autor();
-      $autores = $modelAutor->read();
-      $this->view('frmNoticia', compact('noticia', 'categorias', 'autores'));
+      $model = new Autor();
+      $autor = $model->getById($id);
+      $this->view('frmAutor', compact('autor'));
     }
 
     function listar() {
-      $model = new Noticia();
-      $noticias = $model->read();
-      $this->view('listagemNoticia', compact('noticias'));
+      $model = new Vaga();
+      $vagas = $model->read();
+      $this->view('listaVagas', compact('vagas'));
     }
 
     function novo() {
-      $noticia = array();
-      $noticia['id'] = 0;
-      $noticia['titulo'] = "";
-      $noticia['descricao'] = "";
-      $noticia['autor'] = "";
-      $noticia['data'] = "";
-      $noticia['categoria_id'] = 0;
-      $modelCategoria = new Categoria();
-      $categorias = $modelCategoria->read();
-      $modelAutor = new Autor();
-      $autores = $modelAutor->read();
-      $this->view('frmNoticia', compact('noticia', 'categorias', 'autores'));
+      $autor = array();
+      $autor['id'] = 0;
+      $autor['nome'] = "";
+      $autor['email'] = "";
+      $this->view("frmAutor", compact('autor'));
     }
 
     function salvar() {
-      $noticia = array();
-      $noticia['id'] = $_POST['id'];
-      $noticia['titulo'] = $_POST['titulo'];
-      $noticia['descricao'] = $_POST['descricao'];
-      $noticia['autor_id'] = $_POST['autor_id'];
-      $noticia['data'] = $_POST['data'];
-      $noticia['categoria_id'] = $_POST['categoria_id'];
-      $model = new Noticia();
-      if ($noticia['id'] == 0) {
-        $model->create($noticia);
+      $autor = array();
+      $autor['id'] = $_POST['id'];
+      $autor['nome'] = $_POST['nome'];
+      $autor['email'] = $_POST['email'];
+      $model = new Autor();
+      if ($autor['id'] == 0) {
+        $model->create($autor);
       } else {
-        $model->update($noticia);
+        $model->update($autor);
       }
-      $this->redirect("noticia/listar");
+      $this->redirect("autor/listar");
     }
 
     function excluir($id) {
-      $model = new Noticia();
+      $model = new Autor();
       $model->delete($id);
-      $this->view('noticia/listar');
+      $this->redirect('autor/listar');
     }
   }
  ?>

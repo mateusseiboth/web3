@@ -8,8 +8,9 @@
     public function __construct() {
       try {
         $opcoes = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-        $this->conexao = new PDO('pgsql:host=localhost;dbname=estaciona', "postgres", "postgres", $opcoes);
+        $this->conexao = new PDO('pgsql:host=postgres;dbname=estaciona', "postgres", "postgres", $opcoes);
       } catch (PDOException $e) {
+        echo 'não abriu conexão';
         $this->conexao = null;
       }
     }
