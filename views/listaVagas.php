@@ -3,7 +3,7 @@
 <div class='row'>
 <?php
 foreach ($vagas as $vaga) {
-  $pathChecar = APP . 'ticket/informacao';
+  $pathChecar = APP . 'vagas/informacao';
   $vaga['estado'] ? $cor = 'green' : $cor = 'red';
 
 echo "

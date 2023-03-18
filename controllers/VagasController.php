@@ -12,12 +12,10 @@
       $this->view('listaVagas', compact('vagas'));
     }
 
-    function novo() {
-      $autor = array();
-      $autor['id'] = 0;
-      $autor['nome'] = "";
-      $autor['email'] = "";
-      $this->view("frmAutor", compact('autor'));
+    function informacao($id) {
+      $model = new Vaga();
+      $vaga = $model->information($id);
+      $this->view('frmVaga', compact('vaga'));
     }
 
     function salvar() {
