@@ -96,7 +96,7 @@
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'tickets/listar' ?>">Tickets</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'admin/index' ?>">Painel admin</a>
+            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'admin/listar' ?>">Painel admin</a>
           </li>
 
         </ul>
