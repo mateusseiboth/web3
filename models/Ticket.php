@@ -3,6 +3,30 @@
     protected $tabela="ticket";
     protected $ordem="descr";
 
+    public function encerrar(){
+      $chaves = array_keys($dados);
+      $campos = implode(", ", $chaves);
+      $valores = ":".implode(", :", $chaves);
+      $sql = "select encerrar_ticket($valores)";
+      $sentenca = $this->conexao->prepare($sql);
+      foreach ($chaves as $chave) {
+        $sentenca->bindParam(":$chave", $dados[$chave]);
+      }
+      $sentenca->execute();
+    }
+
+    public function create($dados){
+      $chaves = array_keys($dados);
+      $campos = implode(", ", $chaves);
+      $valores = ":".implode(", :", $chaves);
+      $sql = "select inserir_ticket ($valores)";
+      $sentenca = $this->conexao->prepare($sql);
+      foreach ($chaves as $chave) {
+        $sentenca->bindParam(":$chave", $dados[$chave]);
+      }
+      $sentenca->execute();
+    }
+
 
     public function information($id) {
       $sql  = "SELECT to_char(ticket.hora_entrada at time zone 'UTF-4', 'HH24:MI:SS') as hora_entrada, 

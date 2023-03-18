@@ -19,22 +19,23 @@
     }
 
     function novo() {
-      $categoria = array();
-      $categoria['id'] = 0;
-      $categoria['descricao'] = "";
-      $this->view("frmTicket", compact('ticket'));
+      $modelClient = new Client();
+      $clients = $modelClient->read();
+      $modelCar = new Car();
+      $cars = $modelCar->getCarClient($clients['id']);
+      $modelType = new Type();
+      $types = $modelType->read();
+      $this->view("frmTicket", compact('ticket, clients, cars, types'));
     }
 
     function salvar() {
-      $categoria = array();
-      $categoria['id'] = $_POST['id'];
-      $categoria['descricao'] = $_POST['descricao'];
+      $ticket = array();
+      $ticket['carro_id'] = $_POST['carro_id'];
+      $ticket['vaga_id'] = $_POST['vaga_id'];
+      $ticket['tipo_id'] = $_POST['tipo_id'];
+      $ticket['estado'] = true;
       $model = new Ticket();
-      if ($ticket['id'] == 0) {
-        $model->create($ticket);
-      } else {
-        $model->update($ticket);
-      }
+      $model->create($ticket);
       $this->redirect('ticket/listar');
     }
 
