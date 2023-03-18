@@ -2,11 +2,11 @@
 <div class='row'>
 <?php
 // #INICIO Mateus Seiboth (18/03/2023)
-  $vagaApagar = APP . 'vaga/deletar';
-  $tipoApagar = APP . 'tipo/deletar';
+  $vagaApagar = APP . 'vagas/excluir';
+  $tipoApagar = APP . 'tipo/excluir';
   $tipoEditar = APP . 'tipo/editar';
   $tipoNovo = APP . 'tipo/novo';
-  $vagaNova = APP . 'vaga/nova';
+  $vagaNova = APP . 'vagas/novo';
 echo "
   <div class='col-lg-6 col-md-6 col-sm-12'>
     <table class='table'>

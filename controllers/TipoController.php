@@ -24,10 +24,11 @@
       $tipo['preco'] = $_POST['preco'];
       $tipo['descr'] = $_POST['descr'];
       $model = new Tipo();
-      if ($tipo['id'] == 0) {
+      if ($tipo['id'] == 0 || $tipo['id'] == "" || $tipo['id'] == null) {
         $model->create($tipo);
       } else {
         $model->update($tipo);
+        
       }
       $this->redirect("admin/listar");
     }
@@ -39,7 +40,7 @@
     }
 
     function excluir($id) {
-      $model = new Vaga();
+      $model = new Tipo();
       $model->delete($id);
       $this->redirect('admin/listar');
     }
