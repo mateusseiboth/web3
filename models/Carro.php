@@ -1,7 +1,7 @@
 <?php
-  class Autor extends Model {
-    protected $tabela="autor";
-    protected $ordem="nome";    
+  class Carro extends Model {
+    protected $tabela="carro";
+    protected $ordem="id";    
   }
 
  ?>
