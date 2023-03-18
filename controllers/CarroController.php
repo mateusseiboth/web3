@@ -7,29 +7,44 @@ class CarroController extends Controller
   public function listarCarros()
   {
     $carroModel = new Carro();
-    $carros = $carroModel->listar();
-    return $carros;
+    $carros = $carroModel->read();
+    $this->view('frmCarro', compact('carros'));
   }
 
   // Insere um novo carro
-  public function inserirCarro($placa, $id_cliente)
+  public function inserirCarro()
   {
+    $carro = array();
+
+    $carro['id'] = $_POST['id'];
+    $carro['placa'] = $_POST['placa'];
+    $carro['id_cliente'] = $_POST['id_cliente'];
+
     $carroModel = new Carro();
-    $carroModel->inserir($placa, $id_cliente);
+    $carroModel->create($carro);
+    $this->redirect('carro/listar');
   }
 
   // Atualiza um carro existente
-  public function atualizarCarro($id, $placa, $id_cliente)
+  public function atualizarCarro()
   {
+    $carro = array();
+
+    $carro['id'] = $_POST['id'];
+    $carro['placa'] = $_POST['placa'];
+    $carro['id_cliente'] = $_POST['id_cliente'];
+    
     $carroModel = new Carro();
-    $carroModel->atualizar($id, $placa, $id_cliente);
+    $carroModel->update($carro);
+    $this->redirect('carro/listar');
   }
 
   // Exclui um carro existente
   public function excluirCarro($id)
   {
     $carroModel = new Carro();
-    $carroModel->excluir($id);
+    $carroModel->delete($id);
+    $this->redirect('carro/listar');
   }
 }
 ?>
