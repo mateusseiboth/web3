@@ -6,11 +6,6 @@
       $this->view('listaVagas', compact('vagas'));
     }
 
-    function informacao($id) {
-      $model = new Vaga();
-      $vaga = $model->information($id);
-      $this->view('frmVaga', compact('vaga'));
-    }
 
     function salvar() {
       $vaga = array();

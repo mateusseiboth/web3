@@ -6,6 +6,12 @@
       $this->view("frmTicket", compact('ticket'));
     }
 
+    function informacao($id) {
+      $model = new Vaga();
+      $vaga = $model->information($id);
+      $this->view('frmVaga', compact('vaga'));
+    }
+
     function listar() {
       $model = new Ticket();
       $tickets = $model->read();
