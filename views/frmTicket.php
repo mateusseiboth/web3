@@ -8,10 +8,12 @@
     <label for="nome" class="form-label">Nome</label>
     <input class="form-control" type="text" name="nome" value="<?php echo $autor['nome']; ?>">
   </div>
-  <div class="mb-3">
-    <label for="email" class="form-label">E-mail</label>
-    <input class="form-control" type="email" name="email" value="<?php echo $autor['email']; ?>">
-  </div>
+  <?php
+        foreach ($categorias as $categoria) {
+          $selected = $categoria['id']==$noticia['categoria_id']?'selected':'';
+          echo "<option $selected value='{$categoria['id']}'>{$categoria['descricao']}</option>";
+        }
+  ?>
 
   <button type="submit" name="button">Salvar</button>
 </form>
