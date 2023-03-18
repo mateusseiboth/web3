@@ -7,9 +7,9 @@
     }
 
     function informacao($id) {
-      $model = new Vaga();
-      $vaga = $model->information($id);
-      $this->view('frmVaga', compact('vaga'));
+      $model = new Ticket();
+      $ticket = $model->information($id);
+      $this->view('frmVaga', compact('ticket'));
     }
 
     function listar() {

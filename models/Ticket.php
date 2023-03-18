@@ -1,7 +1,7 @@
 <?php
-  class Categoria extends Model {
-    protected $tabela="categoria";
-    protected $ordem="descricao";
+  class Ticket extends Model {
+    protected $tabela="ticket";
+    protected $ordem="descr";
 
 
     public function information($id) {
