@@ -15,6 +15,9 @@
 // Obtém os carros do banco de dados
 $carros = $controller->listarCarros();
 
+$pathEditar = APP . 'carro/editar';
+$pathExcluir = APP . 'carro/excluir';
+
 // Exibe cada carro em uma linha da tabela
 foreach ($carros as $carro) {
   echo "<tr>";
@@ -22,8 +25,8 @@ foreach ($carros as $carro) {
   echo "<td>{$carro['placa']}</td>";
   echo "<td>{$carro['id_cliente']}</td>";
   echo "<td>
-		<a href='CarroController.php?action=edit_car&car_id={$carro['id']}'>Editar</a>
-		<a href='CarroController.php?action=delete_car&car_id={$carro['id']}'>Excluir</a>
+		<a href='$pathEditar/{$carro['id']}'>Editar</a>
+		<a href='$pathExcluir/{$carro['id']}'>Excluir</a>
 	</td>";
   echo "</tr>";
 }

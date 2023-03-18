@@ -17,6 +17,9 @@
 // Obtém os clientes do banco de dados
 $clientes = $controller->listarClientes();
 
+$pathEditar = APP . 'cliente/editar';
+$pathExcluir = APP . 'cliente/excluir';
+
 // Exibe cada cliente em uma linha da tabela
 foreach ($clientes as $cliente) {
   echo "<tr>";
@@ -25,8 +28,8 @@ foreach ($clientes as $cliente) {
   echo "<td>{$cliente['cpf']}</td>";
   echo "<td>{$cliente['telefone']}</td>";
   echo "<td>
-		<a href='controller.php?action=edit_cliente&cliente_id={$cliente['id']}'>Editar</a>
-		<a href='controller.php?action=delete_cliente&cliente_id={$cliente['id']}'>Excluir</a>
+		<a href='$pathEditar/{$cliente['id']}'>Editar</a>
+		<a href='$pathExcluir/{$cliente['id']}'>Excluir</a>
 	</td>";
   echo "</tr>";
 }
