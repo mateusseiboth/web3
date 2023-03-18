@@ -3,8 +3,7 @@
 <div class='row'>
 <?php
 foreach ($vagas as $vaga) {
-  $pathEditar = APP . 'autor/editar';
-  $pathExcluir = APP . 'autor/excluir';
+  $pathChecar = APP . 'ticket/informacao';
   $vaga['estado'] ? $cor = 'green' : $cor = 'red';
 
 echo "
@@ -12,7 +11,7 @@ echo "
     <div class='card'>
       <div class='card-body' style='text-align: center;'>
         <h5 class='card-title'>Vaga número {$vaga['id']}</h5>
-        <button class='btn'><i class='bi bi-car-front-fill' style='font-size: 8rem; color: {$cor};'></i></button>
+        <a class='btn' href='$pathChecar/{$vaga['id']}'><i class='bi bi-car-front-fill' style='font-size: 8rem; color: {$cor};'></i></a>
       </div>
     </div>
   </div>
