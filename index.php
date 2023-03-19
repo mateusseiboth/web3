@@ -1,5 +1,8 @@
 <?php
 session_start();
+//Para testar a variação de cor comente e descomente essa variavel e seu unset
+//$_COOKIE['tema'] = 'white';
+//unset($_COOKIE['tema']);
     include_once "autoload.php";
 
   ini_set('display_errors', 1);
