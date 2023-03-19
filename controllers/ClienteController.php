@@ -1,6 +1,4 @@
 <?php
-require_once 'model/ClienteModel.php';
-
 class ClienteController extends Controller
 {
   // Lista todos os clientes
@@ -23,7 +21,7 @@ class ClienteController extends Controller
 
     $clienteModel = new Cliente();
     $clienteModel->create($cliente);
-    $this->redirect('cliente/listar');
+    $this->redirect('clientes/listar');
   }
 
   // Atualiza um cliente existente
@@ -38,7 +36,7 @@ class ClienteController extends Controller
 
     $clienteModel = new Cliente();
     $clienteModel->update($cliente);
-    $this->redirect('cliente/listar');
+    $this->redirect('clientes/listar');
   }
 
   // Exclui um cliente existente
@@ -46,7 +44,7 @@ class ClienteController extends Controller
   {
     $clienteModel = new Cliente();
     $clienteModel->delete($id);
-    $this->redirect('cliente/listar');
+    $this->redirect('clientes/listar');
   }
 }
 ?>

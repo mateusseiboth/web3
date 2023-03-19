@@ -1,6 +1,4 @@
 <?php
-require_once 'model/CarroModel.php';
-
 class CarroController extends Controller
 {
   // Lista todos os carros
@@ -22,7 +20,7 @@ class CarroController extends Controller
 
     $carroModel = new Carro();
     $carroModel->create($carro);
-    $this->redirect('carro/listar');
+    $this->redirect('carros/listar');
   }
 
   // Atualiza um carro existente
@@ -36,7 +34,7 @@ class CarroController extends Controller
     
     $carroModel = new Carro();
     $carroModel->update($carro);
-    $this->redirect('carro/listar');
+    $this->redirect('carros/listar');
   }
 
   // Exclui um carro existente
@@ -44,7 +42,7 @@ class CarroController extends Controller
   {
     $carroModel = new Carro();
     $carroModel->delete($id);
-    $this->redirect('carro/listar');
+    $this->redirect('carros/listar');
   }
 }
 ?>

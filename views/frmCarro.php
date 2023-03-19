@@ -13,8 +13,6 @@
 
 <?php
 // Obtém os carros do banco de dados
-$carros = $controller->listarCarros();
-
 $pathEditar = APP . 'carro/editar';
 $pathExcluir = APP . 'carro/excluir';
 
