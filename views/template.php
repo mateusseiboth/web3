@@ -95,16 +95,16 @@
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'vagas/listar' ?>">Vagas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'tickets/listar' ?>">Tickets</a>
+            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'ticket/listar' ?>">Tickets</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'admin/listar' ?>">Painel admin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'carros/listar' ?>">Carros</a>
+            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'carro/listar' ?>">Carros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'clientes/listar' ?>">Clientes</a>
+            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'cliente/listar' ?>">Clientes</a>
         </ul>
 
       </div>
