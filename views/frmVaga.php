@@ -10,7 +10,7 @@
       <div class='card-body' style='text-align: center;'>
         <h5 class='card-title'>Vaga número {$ticket['id_vaga']}</h5>
         <div class='mb-1'>
-          <label for='nome' class='form-label'>Ticket vinculado #{$ticket['id_vaga']}</label>
+          <label for='nome' class='form-label'>Ticket vinculado #{$ticket['ticket_id']}</label>
         </div>
         <div class='mb-3'>
           <label for='nome' class='form-label'>Cliente</label>
