@@ -10,15 +10,25 @@ session_start();
   error_reporting(E_ALL);
   define("APP", "http://localhost/web3/");
 
-  if (!isset($_SESSION['logado']) && $_GET['url'] != 'login/entrar') {
-    $url = 'login/login';
-  } else {
-  if (isset($_GET['url'])) {
+
+  if (isset($_GET['url']) && isset($_SESSION['logado']) && $_GET['url'] != 'login/entrar') {
     $url = $_GET['url'];
   } else {
-    $url = 'index/index';
+    if(isset($_GET['url']) && $_GET['url'] == 'login/entrar'){
+    $url = $_GET['url'];
+  } else if(isset($_SESSION['logado'])){
+    $url= 'index/index';
+  }
+    else {
+    $url = 'login/login';
   }
 }
+
+ 
+  
+
+
+
   $parametros = explode("/", $url);
   $nomeControlador = ucfirst($parametros[0]).'Controller';
   
