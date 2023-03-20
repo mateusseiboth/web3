@@ -1,3 +1,6 @@
+<?php 
+  !isset ($_COOKIE['tema']) ? $tema='text-white bg-dark' : $tema='text-black bg-white' ;
+?>
 <!doctype html>
 <html lang="en">
 
@@ -12,8 +15,7 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 
 
@@ -80,13 +82,12 @@
 
 </head>
 
-<body>
+<body class="<?php echo $tema ?>">
 
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="<?php echo APP; ?>">CutuCar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -95,16 +96,25 @@
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'vagas/listar' ?>">Vagas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'tickets/listar' ?>">Tickets</a>
+            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'ticket/listar' ?>">Tickets</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'admin/listar' ?>">Painel admin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'carros/listar' ?>">Carros</a>
+            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'carro/listar' ?>">Carros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'clientes/listar' ?>">Clientes</a>
+            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'cliente/listar' ?>">Clientes</a>
+        </ul>
+        <!-- Item mais a direita -->
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <?php 
+              $pathDeslogar= APP . 'login/deslogar';
+              echo (isset ($_SESSION['logado']) ? "<a class='nav-link active' href='$pathDeslogar'>Deslogar</a>" : "");?>
+          </li>
+
         </ul>
 
       </div>
@@ -112,7 +122,7 @@
   </nav>
 
   <main class="container">
-    <div class="bg-light p-5 rounded">
+    <div class="p-5 border border-primary">
       <?php
       require_once $arquivo;
       ?>
@@ -120,12 +130,8 @@
   </main>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 
 </body>
 
