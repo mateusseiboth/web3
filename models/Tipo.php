@@ -1,7 +1,8 @@
 <?php
   class Tipo extends Model {
     protected $tabela="tipo";
-    protected $ordem="descr";    
+    protected $query = "SELECT tipo.* FROM tipo order by id";
+    protected $ordem="id";    
   }
 
  ?>
