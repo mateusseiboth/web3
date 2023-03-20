@@ -13,23 +13,19 @@
 
     protected $ordem="id";
 
-    public function encerrar(){
-      $chaves = array_keys($dados);
-      $campos = implode(", ", $chaves);
-      $valores = ":".implode(", :", $chaves);
-      $sql = "select encerrar_ticket($valores)";
+    public function encerrar($id){
+      $sql = "select encerrar_ticket(:id)";
       $sentenca = $this->conexao->prepare($sql);
-      foreach ($chaves as $chave) {
-        $sentenca->bindParam(":$chave", $dados[$chave]);
-      }
+      $sentenca->bindParam(":id", $id);
       $sentenca->execute();
+      
     }
 
     public function create($dados){
       $chaves = array_keys($dados);
       $campos = implode(", ", $chaves);
       $valores = ":".implode(", :", $chaves);
-      $sql = "select inserir_ticket ($valores)";
+      $sql = "select inserir_ticket($valores)";
       $sentenca = $this->conexao->prepare($sql);
       foreach ($chaves as $chave) {
         $sentenca->bindParam(":$chave", $dados[$chave]);
