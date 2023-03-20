@@ -4,6 +4,7 @@
 
 !isset ($_COOKIE['tema']) ? $tema='card-dark' : $tema='card' ;
 
+if (isset($ticket['ticket_id'])){
   echo "
   <div class='col-sm-8' style='margin-top: 2rem;'>
     <div class='$tema'>
@@ -45,5 +46,8 @@
     </div>
   </div>
 ";
+} else {
+  echo "<h1>Vaga Livre</h1>";
+}
   ?>
 </div>
