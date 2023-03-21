@@ -1,7 +1,6 @@
 <?php
 $_SESSION['tema'] == 'white' ? $tema = "text-black bg-white" : $tema = 'text-white bg-dark';
 
-var_dump($_SESSION['tema']);
 ?>
 <!doctype html>
 <html lang="en">
