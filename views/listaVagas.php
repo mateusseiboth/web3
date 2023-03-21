@@ -3,7 +3,8 @@
 <div class='row'>
 <?php
 foreach ($vagas as $vaga) {
-  !isset ($_COOKIE['tema']) ? $tema='card-dark' : $tema='card' ;
+  $_SESSION['tema'] == 'white' ? $tema='card' : $tema='card-dark';
+
   $pathChecar = APP . 'ticket/informacao';
   $vaga['estado'] ? $cor = 'green' : $cor = 'red';
 

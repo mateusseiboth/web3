@@ -1,8 +1,8 @@
 <?php
 session_start();
 //Para testar a variação de cor comente e descomente essa variavel e seu unset
-//$_COOKIE['tema'] = 'white';
-//unset($_COOKIE['tema']);
+!isset($_SESSION['tema']) ? $_SESSION['tema'] = "black" : ''; 
+
     include_once "autoload.php";
 
   ini_set('display_errors', 1);
@@ -23,11 +23,6 @@ session_start();
     $url = 'login/login';
   }
 }
-
- 
-  
-
-
 
   $parametros = explode("/", $url);
   $nomeControlador = ucfirst($parametros[0]).'Controller';

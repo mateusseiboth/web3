@@ -1,7 +1,8 @@
 <h1>Controle de espaço e preços</h1>
 <div class='row'>
 <?php
-  !isset ($_COOKIE['tema']) ? $tema='text-white' : $tema='text-black' ;
+  $_SESSION['tema'] == 'white' ? $tema='text-black'  : $tema='text-white';
+
 // #INICIO Mateus Seiboth (18/03/2023)
   $vagaApagar = APP . 'vagas/excluir';
   $tipoApagar = APP . 'tipo/excluir';

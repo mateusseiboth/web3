@@ -2,7 +2,7 @@
 <div class='row'>
   <?php
 
-!isset ($_COOKIE['tema']) ? $tema='card-dark' : $tema='card' ;
+$_SESSION['tema'] == 'white' ? $tema='card' :  $tema='card-dark';
 
 if (isset($ticket['ticket_id'])){
   echo "
