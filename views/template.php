@@ -132,7 +132,7 @@ $_SESSION['tema'] == 'white' ? $img = "url('../img/light-theme.jpg')" : $img = "
         <ul class="navbar-nav ms-auto">
           <!-- Link para alternar entre temas claro e escuro -->
           <li class="nav-item">
-            <a class="nav-link active" href='<?php $pathTrocar = APP . 'index/trocar';
+            <a class="nav-link active" href='<?php $pathTrocar = APP . "index/trocar/";
             echo "$pathTrocar" ?>'>
               <?php
               // Exibição do ícone do sol ou da lua dependendo do tema selecionado

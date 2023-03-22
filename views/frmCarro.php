@@ -1,6 +1,7 @@
 <?php
 // Obtém o tema atual
 $_SESSION['tema'] == 'white' ? $tema = 'text-black' : $tema = 'text-white';
+var_dump($_SERVER);
 ?>
 
 <style>
@@ -35,12 +36,17 @@ $_SESSION['tema'] == 'white' ? $tema = 'text-black' : $tema = 'text-white';
   </div>
 
   <div class="mb-3">
-    <label for="cliente_id" class="form-label">ID do cliente:</label>
+    <label for="cliente_id" class="form-label">Nome do Cliente:</label>
     <div class="input-group col-mb-3">
       <span class="input-group-text" id="basic-addon1">
         <i class="bi bi-person-vcard"></i>
       </span>
-      <input type="text" name="cliente_id" id="cliente_id" class="form-control">
+      <select name="cliente_id" class="form-select" aria-label="cliente_id">
+      <option selected name='cliente_id' value='-1'>Sem cadastro</option>
+      <?php foreach ($clientes as $cliente) {
+        echo "<option name='cliente_id' value='{$cliente['id']}'>{$cliente['id']} - {$cliente['nome']}</option>";
+      } ?>
+      </select>
     </div>
   </div>
 

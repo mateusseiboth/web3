@@ -8,7 +8,7 @@
     }
 
    
-    function trocar(){
+    function trocar($url){
      
       $_SESSION['tema'] == 'white' ? $_SESSION['tema'] = 'black'  : $_SESSION['tema'] = 'white';
       //var_dump($_COOKIE['tema']);
