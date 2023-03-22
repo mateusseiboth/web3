@@ -1,7 +1,7 @@
 <?php
 session_start();
 //Para testar a variação de cor comente e descomente essa variavel e seu unset
-!isset($_SESSION['tema']) ? $_SESSION['tema'] = "black" : '';       
+!isset($_SESSION['tema']) ? $_SESSION['tema'] = "black" : ''; 
 
 
     include_once "autoload.php";

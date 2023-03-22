@@ -1,6 +1,9 @@
 <?php
 $_SESSION['tema'] == 'white' ? $tema = "text-black bg-white" : $tema = 'text-white bg-dark';
-$_SESSION['tema'] == 'white' ? $img = "url('../img/light-theme.jpg')" : $img = "url('../img/dark-theme.jpg')";      
+
+isset($_GET['url']) ? $img_url='../img/' : $img_url='img/' ;
+
+$_SESSION['tema'] == 'white' ? $img = "url('$img_url/light-theme.jpg')" : $img = "url('$img_url/dark-theme.jpg')";      
 ?>
 
 <!doctype html>
