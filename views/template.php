@@ -1,6 +1,9 @@
 <?php
 $_SESSION['tema'] == 'white' ? $tema = "text-black bg-white" : $tema = 'text-white bg-dark';
-$_SESSION['tema'] == 'white' ? $img = "url('../img/light-theme.jpg')" : $img = "url('../img/dark-theme.jpg')";      
+
+isset($_GET['url']) ? $img_url='../img/' : $img_url='img/' ;
+
+$_SESSION['tema'] == 'white' ? $img = "url('$img_url/light-theme.jpg')" : $img = "url('$img_url/dark-theme.jpg')";      
 ?>
 
 <!doctype html>
@@ -96,7 +99,7 @@ $_SESSION['tema'] == 'white' ? $img = "url('../img/light-theme.jpg')" : $img = "
     <!-- Container principal -->
     <div class="container-fluid">
       <!-- Link da marca "CutuCar" que redireciona para a página inicial -->
-      <a class="navbar-brand" href="<?php echo APP; ?>">CutuCar</a>
+      <a class="navbar-brand" href="<?php echo APP . 'index/index' ?>">CutuCar</a>
 
       <!-- Botão para o menu responsivo -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -132,7 +135,7 @@ $_SESSION['tema'] == 'white' ? $img = "url('../img/light-theme.jpg')" : $img = "
         <ul class="navbar-nav ms-auto">
           <!-- Link para alternar entre temas claro e escuro -->
           <li class="nav-item">
-            <a class="nav-link active" href='<?php $pathTrocar = APP . 'index/trocar';
+            <a class="nav-link active" href='<?php $pathTrocar = APP . "index/trocar/";
             echo "$pathTrocar" ?>'>
               <?php
               // Exibição do ícone do sol ou da lua dependendo do tema selecionado
