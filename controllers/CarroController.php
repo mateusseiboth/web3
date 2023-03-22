@@ -6,7 +6,9 @@ class CarroController extends Controller
   {
     $carroModel = new Carro();
     $carros = $carroModel->read();
-    $this->view('frmCarro', compact('carros'));
+    $clientModel = new Cliente();
+    $clientes = $clientModel->read();
+    $this->view('frmCarro', compact('carros', 'clientes'));
   }
 
   // Insere um novo carro
