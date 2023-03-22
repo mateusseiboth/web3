@@ -1,15 +1,11 @@
 <?php
   class TicketController extends Controller {
-    function editar($id) {
-      $model = new Ticket();
-      $ticket = $model->getById($id);
-      $this->view("frmTicket", compact('ticket'));
-    }
 
     function informacao($id) {
       $model = new Ticket();
       $ticket = $model->information($id);
       $this->view('frmVaga', compact('ticket'));
+    
     }
 
     function listar() {
@@ -28,7 +24,7 @@
       $this->view("frmTicket", compact('ticket, clients, cars, types'));
     }
 
-    function salvar() {
+    function create() {
       $ticket = array();
       $ticket['carro_id'] = $_POST['carro_id'];
       $ticket['vaga_id'] = $_POST['vaga_id'];
@@ -39,9 +35,9 @@
       $this->redirect('ticket/listar');
     }
 
-    function excluir($id) {
+    function encerrar($id) {
       $model = new Ticket();
-      $model->delete($id);
+      $model->encerrar($id);
       $this->redirect('ticket/listar');
     }
   }

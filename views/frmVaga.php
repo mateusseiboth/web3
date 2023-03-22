@@ -2,15 +2,16 @@
 <div class='row'>
   <?php
 
-!isset ($_COOKIE['tema']) ? $tema='card-dark' : $tema='card' ;
+$_SESSION['tema'] == 'white' ? $tema='card' :  $tema='card-dark';
 
+if (isset($ticket['ticket_id'])){
   echo "
   <div class='col-sm-8' style='margin-top: 2rem;'>
     <div class='$tema'>
       <div class='card-body' style='text-align: center;'>
         <h5 class='card-title'>Vaga número {$ticket['id_vaga']}</h5>
         <div class='mb-1'>
-          <label for='nome' class='form-label'>Ticket vinculado #{$ticket['id_vaga']}</label>
+          <label for='nome' class='form-label'>Ticket vinculado #{$ticket['ticket_id']}</label>
         </div>
         <div class='mb-3'>
           <label for='nome' class='form-label'>Cliente</label>
@@ -45,5 +46,8 @@
     </div>
   </div>
 ";
+} else {
+  echo "<h1>Vaga Livre</h1>";
+}
   ?>
 </div>
