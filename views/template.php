@@ -96,7 +96,7 @@ $_SESSION['tema'] == 'white' ? $img = "url('../img/light-theme.jpg')" : $img = "
     <!-- Container principal -->
     <div class="container-fluid">
       <!-- Link da marca "CutuCar" que redireciona para a página inicial -->
-      <a class="navbar-brand" href="<?php echo APP; ?>">CutuCar</a>
+      <a class="navbar-brand" href="<?php echo APP . 'index/index' ?>">CutuCar</a>
 
       <!-- Botão para o menu responsivo -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"

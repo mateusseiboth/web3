@@ -1,7 +1,7 @@
 <?php
 // Obtém o tema atual
 $_SESSION['tema'] == 'white' ? $tema = 'text-black' : $tema = 'text-white';
-var_dump($_SERVER);
+//var_dump($_SERVER);
 ?>
 
 <style>
