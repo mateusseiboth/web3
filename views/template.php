@@ -1,7 +1,8 @@
 <?php
 $_SESSION['tema'] == 'white' ? $tema = "text-black bg-white" : $tema = 'text-white bg-dark';
-
+$_SESSION['tema'] == 'white' ? $img = "url('../img/light-theme.jpg')" : $img = "url('../img/dark-theme.jpg')";      
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -14,13 +15,9 @@ $_SESSION['tema'] == 'white' ? $tema = "text-black bg-white" : $tema = 'text-whi
   <title>Carrinhos maravilhosos v0.3</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-
-
 
   <style>
     .bd-placeholder-img {
@@ -77,70 +74,92 @@ $_SESSION['tema'] == 'white' ? $tema = "text-black bg-white" : $tema = 'text-whi
     body {
       min-height: 75rem;
       padding-top: 4.5rem;
+      background-image: <?php echo $img ?>;
+    }
+
+    #border-main {
+      border-radius: 10px;
+    }
+    
+    .border-primary {
+      border-radius: 20px;
     }
   </style>
-
-
-
 </head>
 
+<!-- Definindo a classe do corpo com base no tema selecionado -->
 <body class="<?php echo $tema ?>">
 
-
+  <!-- Barra de navegação fixa na parte superior com fundo azul -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+
+    <!-- Container principal -->
     <div class="container-fluid">
+      <!-- Link da marca "CutuCar" que redireciona para a página inicial -->
       <a class="navbar-brand" href="<?php echo APP; ?>">CutuCar</a>
+
+      <!-- Botão para o menu responsivo -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
+      <!-- Itens do menu -->
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <!-- Link para listar vagas -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'vagas/listar' ?>">Vagas</a>
           </li>
+          <!-- Link para listar tickets -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'ticket/listar' ?>">Tickets</a>
           </li>
+          <!-- Link para o painel do administrador -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'admin/listar' ?>">Painel admin</a>
           </li>
+          <!-- Link para listar carros -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'carro/listar' ?>">Carros</a>
           </li>
+          <!-- Link para listar clientes -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'cliente/listar' ?>">Clientes</a>
         </ul>
-        <!-- Item mais a direita -->
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href='<?php $pathTrocar = APP . 'index/trocar'; echo "$pathTrocar" ?>'>
-                <?php
-                echo ($_SESSION['tema'] == 'black' ? "<i class='bi bi-brightness-high'></i>" : "<i class='bi bi-brightness-high-fill'></i>")
-                  ?>
-            </a>
 
+        <!-- Itens do menu à direita -->
+        <ul class="navbar-nav ms-auto">
+          <!-- Link para alternar entre temas claro e escuro -->
+          <li class="nav-item">
+            <a class="nav-link active" href='<?php $pathTrocar = APP . 'index/trocar';
+            echo "$pathTrocar" ?>'>
+              <?php
+              // Exibição do ícone do sol ou da lua dependendo do tema selecionado
+              echo ($_SESSION['tema'] == 'black' ? "<i class='bi bi-brightness-high'></i>" : "<i class='bi bi-brightness-high-fill'></i>")
+                ?>
+            </a>
           </li>
+
+          <!-- Link para deslogar caso usuário esteja logado -->
           <li class="nav-item">
             <?php
             $pathDeslogar = APP . 'login/deslogar';
-            echo (isset($_SESSION['logado']) ? "<a class='nav-link active' href='$pathDeslogar'>Deslogar</a>" : ""); ?>
+            echo (isset($_SESSION['logado']) ? "<a class='nav-link active' href='$pathDeslogar'>Deslogar</a>" : "");
+            ?>
           </li>
-
         </ul>
-
       </div>
     </div>
   </nav>
 
   <main class="container">
-    <div class="p-5 border border-primary">
+    <div class="p-5 border border-primary <?php echo $tema ?>" id="border-main">
       <?php
       require_once $arquivo;
       ?>
     </div>
   </main>
-
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -148,7 +167,6 @@ $_SESSION['tema'] == 'white' ? $tema = "text-black bg-white" : $tema = 'text-whi
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
     crossorigin="anonymous"></script>
-
 </body>
 
 </html>
