@@ -1,12 +1,12 @@
 <?php
-$_SESSION['tema'] == 'white' ? $tema = "text-black bg-white" : $tema = 'text-white bg-dark';
+// $_SESSION['tema'] == 'white' ? $tema = "text-black bg-white" : $tema = 'text-white bg-dark';
 
-isset($_GET['url']) ? $img_url='../img/' : $img_url='img/' ;
+// isset($_GET['url']) ? $img_url='../img/' : $img_url='img/' ;
 
-if($_SESSION['egg'] > 5){
-  $img = "url('$img_url/egg.jpg')";
-} else
-$_SESSION['tema'] == 'white' ? $img = "url('$img_url/light-theme.jpg')" : $img = "url('$img_url/dark-theme.jpg')";      
+// if($_SESSION['egg'] > 5){
+//   $img = "url('$img_url/egg.jpg')";
+// } else
+//$_SESSION['tema'] == 'white' ? $img = "url('$img_url/light-theme.jpg')" : $img = "url('$img_url/dark-theme.jpg')";      
 ?>
 
 <!doctype html>
@@ -94,7 +94,7 @@ $_SESSION['tema'] == 'white' ? $img = "url('$img_url/light-theme.jpg')" : $img =
 </head>
 
 <!-- Definindo a classe do corpo com base no tema selecionado -->
-<body class="<?php echo $tema ?>">
+<body class="bg-dark text-white" onload="carregarTema()">
 
   <!-- Barra de navegação fixa na parte superior com fundo azul -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
@@ -138,12 +138,8 @@ $_SESSION['tema'] == 'white' ? $img = "url('$img_url/light-theme.jpg')" : $img =
         <ul class="navbar-nav ms-auto">
           <!-- Link para alternar entre temas claro e escuro -->
           <li class="nav-item">
-            <a class="nav-link active" href='<?php $pathTrocar = APP . "index/trocar/";
-            echo "$pathTrocar" ?>'>
-              <?php
-              // Exibição do ícone do sol ou da lua dependendo do tema selecionado
-              echo ($_SESSION['tema'] == 'black' ? "<i class='bi bi-brightness-high'></i>" : "<i class='bi bi-brightness-high-fill'></i>")
-                ?>
+            <a class="nav-link active" onclick="trocarTema()" href=''>
+              <i id="brilho" class='bi bi-brightness-high'></i>
             </a>
           </li>
 
@@ -174,5 +170,10 @@ $_SESSION['tema'] == 'white' ? $img = "url('$img_url/light-theme.jpg')" : $img =
     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
     crossorigin="anonymous"></script>
 </body>
+
+
+<?php isset($_GET['url']) ? $_url='../JS/' : $_url='JS/';
+
+echo "<script src='$_url/tema.js' type='text/javascript'></script>" ?>
 
 </html>
