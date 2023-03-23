@@ -24,6 +24,7 @@ function carregarTema() {
   const theme = getCookie('theme');
   if (theme === 'light') {
 
+    //inserir verificação se existe tabela ou card
     // if (){
       
     // }
