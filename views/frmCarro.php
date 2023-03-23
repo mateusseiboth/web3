@@ -1,6 +1,5 @@
 <?php
 // Obtém o tema atual
-$_SESSION['tema'] == 'white' ? $tema = 'text-black' : $tema = 'text-white';
 //var_dump($_SERVER);
 ?>
 
@@ -54,7 +53,7 @@ $_SESSION['tema'] == 'white' ? $tema = 'text-black' : $tema = 'text-white';
 </form>
 
 <!-- Tabela de carros -->
-<table class="table <?php echo $tema ?>">
+<table class="table tabelinha">
   <thead>
     <tr>
       <th scope="col">ID</th>
