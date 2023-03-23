@@ -80,7 +80,7 @@
     body {
       min-height: 75rem;
       padding-top: 4.5rem;
-      background-image: <?php echo $img ?>;
+      /* background-image: <?php // echo $img ?>; */
     }
 
     #border-main {
@@ -156,7 +156,7 @@
   </nav>
 
   <main class="container">
-    <div class="p-5 border border-primary <?php echo $tema ?>" id="border-main">
+    <div class="p-5 border border-primary" id="border-main">
       <?php
       require_once $arquivo;
       ?>

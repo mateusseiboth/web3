@@ -1,13 +1,10 @@
 <h1>Detalhes da vaga</h1>
 <div class='row'>
   <?php
-
-$_SESSION['tema'] == 'white' ? $tema='card' :  $tema='card-dark';
-
 if (isset($ticket['ticket_id'])){
   echo "
-  <div class='col-sm-8' style='margin-top: 2rem;'>
-    <div class='$tema'>
+  <div class='col-sm-8' style='margin-top: 2rem;' onLoad='carregarTema()''>
+    <div id='cartao' class='card-dark'>
       <div class='card-body' style='text-align: center;'>
         <h5 class='card-title'>Vaga número {$ticket['id_vaga']}</h5>
         <div class='mb-1'>

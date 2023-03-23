@@ -1,8 +1,6 @@
 <h1>Controle de espaço e preços</h1>
 <div class='row'>
 <?php
-  $_SESSION['tema'] == 'white' ? $tema='text-black'  : $tema='text-white';
-
 // #INICIO Mateus Seiboth (18/03/2023)
   $vagaApagar = APP . 'vagas/excluir';
   $tipoApagar = APP . 'tipo/excluir';
@@ -11,7 +9,7 @@
   $vagaNova = APP . 'vagas/novo';
 echo "
   <div class='col-lg-6 col-md-6 col-sm-12'>
-    <table class='table $tema'>
+    <table class='table tabelinha'>
         <thead>
       <tr>
         <th scope='col'><a class='btn btn-success' href='$vagaNova'>Nova vaga</a></th>
@@ -37,7 +35,7 @@ echo "
     // Aqui é o formulário para adicionar um novo tipo de vaga 
     echo "
   <div class='col-lg-6 col-md-6 col-sm-12'>
-    <table class='table $tema'>
+    <table class='table tabelinha'>
         <thead>
       <tr>
       <th scope='col'><a class='btn btn-success' href='$tipoNovo'>Novo Tipo</a></th>
