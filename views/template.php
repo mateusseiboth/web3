@@ -3,6 +3,9 @@ $_SESSION['tema'] == 'white' ? $tema = "text-black bg-white" : $tema = 'text-whi
 
 isset($_GET['url']) ? $img_url='../img/' : $img_url='img/' ;
 
+if($_SESSION['egg'] > 5){
+  $img = "url('$img_url/egg.jpg')";
+} else
 $_SESSION['tema'] == 'white' ? $img = "url('$img_url/light-theme.jpg')" : $img = "url('$img_url/dark-theme.jpg')";      
 ?>
 
