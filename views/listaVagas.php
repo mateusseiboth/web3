@@ -1,14 +1,13 @@
 <h1>Visão Geral</h1>
 <a class="btn btn-primary" href="<?php echo APP . 'ticket/novo'; ?>">Entrada de veiculo</a>
 <div class='row'>
+  <?php
+  foreach ($vagas as $vaga) {
 
-<?php
-foreach ($vagas as $vaga) {
+    $pathChecar = APP . 'ticket/informacao';
+    $vaga['estado'] ? $cor = 'green' : $cor = 'red';
 
-  $pathChecar = APP . 'ticket/informacao';
-  $vaga['estado'] ? $cor = 'green' : $cor = 'red';
-  
-  echo "
+    echo "
   <div class='col-sm-2 d-flex align-items-stretch' style='margin-top: 2rem;'>
     <div class='card corzinha'>
       <div class='card-header' style='text-align: center;'>
@@ -20,7 +19,6 @@ foreach ($vagas as $vaga) {
     </div>
   </div>
 ";
-}
-?>
+  }
+  ?>
 </div>
-
