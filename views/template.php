@@ -138,7 +138,7 @@
         <ul class="navbar-nav ms-auto">
           <!-- Link para alternar entre temas claro e escuro -->
           <li class="nav-item">
-            <a class="nav-link active" onclick="trocarTema()" href=''>
+            <a class="nav-link active" onclick="trocarTema()">
               <i id="brilho" class='bi bi-brightness-high'></i>
             </a>
           </li>
