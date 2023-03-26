@@ -20,39 +20,12 @@
 </h1>
 
 <!-- Formulário de inserção/edição de carros -->
-<form method="POST" action="controller.php" id="form-car">
-  <input type="hidden" name="action" value="save_car">
-  <input type="hidden" name="car_id" value="">
 
-  <div class="mb-3">
-    <label for="placa" class="form-label">Placa:</label>
-    <div class="input-group col-mb-3">
-      <span class="input-group-text" id="basic-addon1">
-        <i class="bi bi-car-front"></i>
-      </span>
-      <input type="text" name="placa" id="placa" class="form-control">
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <label for="cliente_id" class="form-label">Nome do Cliente:</label>
-    <div class="input-group col-mb-3">
-      <span class="input-group-text" id="basic-addon1">
-        <i class="bi bi-person-vcard"></i>
-      </span>
-      <select name="cliente_id" class="form-select" aria-label="cliente_id">
-      <option selected name='cliente_id' value='-1'>Sem cadastro</option>
-      <?php foreach ($clientes as $cliente) {
-        echo "<option name='cliente_id' value='{$cliente['id']}'>{$cliente['id']} - {$cliente['nome']}</option>";
-      } ?>
-      </select>
-    </div>
-  </div>
-
-  <button type="submit" class="btn btn-success">Salvar</button>
-</form>
 
 <!-- Tabela de carros -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+  Novo carro
+</button>
 <table class="table tabelinha">
   <thead>
     <tr>
@@ -84,3 +57,59 @@
     ?>
   </tbody>
 </table>
+
+<!-- Criação da modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content corzinha">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Título da Modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="controller.php" id="form-car">
+          <input type="hidden" name="action" value="save_car">
+          <input type="hidden" name="car_id" value="">
+
+          <div class="mb-3">
+            <label for="placa" class="form-label">Placa:</label>
+            <div class="input-group col-mb-3">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="bi bi-car-front"></i>
+              </span>
+              <input type="text" name="placa" id="placa" class="form-control">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="cliente_id" class="form-label">Nome do Cliente:</label>
+            <div class="input-group col-mb-3">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="bi bi-person-vcard"></i>
+              </span>
+              <select name="cliente_id" class="form-select" aria-label="cliente_id">
+                <option selected name='cliente_id' value='-1'>Sem cadastro</option>
+                <?php foreach ($clientes as $cliente) {
+                  echo "<option name='cliente_id' value='{$cliente['id']}'>{$cliente['id']} - {$cliente['nome']}</option>";
+                } ?>
+              </select>
+            </div>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Salvar mudanças</button>
+
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+    keyboard: false
+  })
+  myModal.show()
+</script>
