@@ -1,8 +1,8 @@
 <h1>Detalhes da vaga</h1>
 <div class='row'>
   <?php
-if (isset($ticket['ticket_id'])){
-  echo "
+  if (isset($ticket['ticket_id'])) {
+    echo "
   <div class='col-sm-8' style='margin-top: 2rem;' onLoad='carregarTema()''>
     <div id='cartao' class='card-dark'>
       <div class='card-body' style='text-align: center;'>
@@ -43,8 +43,8 @@ if (isset($ticket['ticket_id'])){
     </div>
   </div>
 ";
-} else {
-  echo "<h1>Vaga Livre</h1>";
-}
+  } else {
+    echo "<h1>Vaga Livre</h1>";
+  }
   ?>
 </div>

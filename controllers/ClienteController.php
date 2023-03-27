@@ -10,7 +10,7 @@ class ClienteController extends Controller
   }
 
   // Insere um novo cliente
-  public function inserir()
+  public function salvar()
   {
     $cliente = array();
     $cliente['id'] = $_POST['id'];
@@ -18,29 +18,20 @@ class ClienteController extends Controller
     $cliente['cpf'] = $_POST['cpf'];
     $cliente['telefone'] = $_POST['telefone'];
     $clienteModel = new Cliente();
-    $clienteModel->create($cliente);
-    $this->redirect('clientes/listar');
+    if ($cliente['id'] == 0 || $cliente['id'] == "" || $cliente['id'] == null) {
+      $clienteModel->create($cliente);
+    } else {
+      $clienteModel->update($cliente);
+    }
+    $this->redirect('cliente/listar');
   }
-
-  // Atualiza um cliente existente
-  public function atualizar()
-  {
-    $cliente = array();
-    $cliente['id'] = $_POST['id'];
-    $cliente['nome'] = $_POST['nome'];
-    $cliente['cpf'] = $_POST['cpf'];
-    $cliente['telefone'] = $_POST['telefone'];
-    $clienteModel = new Cliente();
-    $clienteModel->update($cliente);
-    $this->redirect('clientes/listar');
-  }
-
+  
   // Exclui um cliente existente
   public function excluir($id)
   {
     $clienteModel = new Cliente();
     $clienteModel->delete($id);
-    $this->redirect('clientes/listar');
+    $this->redirect('cliente/listar');
   }
 }
 ?>

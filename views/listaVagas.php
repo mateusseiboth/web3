@@ -1,5 +1,10 @@
-<h1>Visão Geral</h1>
+<h1 style="text-align: center">
+  <i class="bi bi-binoculars-fill" style="font-size: 3rem"></i>
+  <div>Visão Geral</div>
+</h1>
+
 <a class="btn btn-primary" href="<?php echo APP . 'ticket/novo'; ?>">Entrada de veiculo</a>
+
 <div class='row'>
   <?php
   foreach ($vagas as $vaga) {

@@ -1,14 +1,3 @@
-<?php
-// $_SESSION['tema'] == 'white' ? $tema = "text-black bg-white" : $tema = 'text-white bg-dark';
-
-// isset($_GET['url']) ? $img_url='../img/' : $img_url='img/' ;
-
-// if($_SESSION['egg'] > 5){
-//   $img = "url('$img_url/egg.jpg')";
-// } else
-//$_SESSION['tema'] == 'white' ? $img = "url('$img_url/light-theme.jpg')" : $img = "url('$img_url/dark-theme.jpg')";      
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -42,10 +31,11 @@
 
     .b-example-divider {
       height: 3rem;
-      background-color: rgba(0, 0, 0, .1);
-      border: solid rgba(0, 0, 0, .15);
+      background-color: rgba(0, 0, 0, 0.1);
+      border: solid rgba(0, 0, 0, 0.15);
       border-width: 1px 0;
-      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+        inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
     }
 
     .b-example-vr {
@@ -55,7 +45,7 @@
     }
 
     .bi {
-      vertical-align: -.125em;
+      vertical-align: -0.125em;
       fill: currentColor;
     }
 
@@ -80,13 +70,12 @@
     body {
       min-height: 75rem;
       padding-top: 4.5rem;
-      /* background-image: <?php // echo $img ?>; */
     }
 
     #border-main {
       border-radius: 10px;
     }
-    
+
     .border-primary {
       border-radius: 20px;
     }
@@ -109,21 +98,17 @@
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
       <!-- Itens do menu -->
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <!-- Link para listar vagas -->
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'vagas/listar' ?>">Vagas</a>
-          </li>
-          <!-- Link para listar tickets -->
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'ticket/listar' ?>">Tickets</a>
-          </li>
           <!-- Link para o painel do administrador -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'admin/listar' ?>">Painel admin</a>
+          </li>
+          <!-- Link para listar vagas -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="<?php echo APP . 'vagas/listar' ?>">Vagas</a>
           </li>
           <!-- Link para listar carros -->
           <li class="nav-item">
@@ -132,6 +117,10 @@
           <!-- Link para listar clientes -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'cliente/listar' ?>">Clientes</a>
+            <!-- Link para listar tickets -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="<?php echo APP . 'ticket/listar' ?>">Tickets</a>
+            </li>
         </ul>
 
         <!-- Itens do menu à direita -->
@@ -142,7 +131,6 @@
               <i id="brilho" class='bi bi-brightness-high'></i>
             </a>
           </li>
-
           <!-- Link para deslogar caso usuário esteja logado -->
           <li class="nav-item">
             <?php
@@ -151,12 +139,13 @@
             ?>
           </li>
         </ul>
+
       </div>
     </div>
   </nav>
 
   <main class="container">
-    <div class="p-5 border border-primary" id="border-main">
+    <div class="p-5 border border-primary corzinha" id="border-main">
       <?php
       require_once $arquivo;
       ?>
@@ -171,9 +160,7 @@
     crossorigin="anonymous"></script>
 </body>
 
-
-<?php isset($_GET['url']) ? $_url='../JS/' : $_url='JS/';
-
+<?php isset($_GET['url']) ? $_url = '../JS/' : $_url = 'JS/';
 echo "<script src='$_url/tema.js' type='text/javascript'></script>" ?>
 
 </html>
