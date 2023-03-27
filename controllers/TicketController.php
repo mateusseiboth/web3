@@ -15,13 +15,15 @@
     }
 
     function novo() {
-      $modelClient = new Client();
-      $clients = $modelClient->read();
-      $modelCar = new Car();
-      $cars = $modelCar->getCarClient($clients['id']);
-      $modelType = new Type();
-      $types = $modelType->read();
-      $this->view("frmTicket", compact('ticket, clients, cars, types'));
+      $modelClient = new Cliente();
+      $clientes = $modelClient->read();
+      $modelCar = new Carro();
+      $carros = $modelCar->read();
+      $modelType = new Tipo();
+      $tipos = $modelType->read();
+      $modelVaga = new Vaga();
+      $vagas = $modelVaga->read();
+      $this->view("frmTicket", compact('clientes', 'carros', 'tipos', 'vagas'));
     }
 
     function create() {
@@ -33,6 +35,13 @@
       $model = new Ticket();
       $model->create($ticket);
       $this->redirect('ticket/listar');
+    }
+
+    function todos(){
+      $todos['bol'] = false;
+      $model = new Ticket();
+      $tickets = $model->todos();
+      $this->view("listarTicket", compact('tickets', 'todos'));
     }
 
     function encerrar($id) {
