@@ -46,13 +46,35 @@ function carregarTema() {
 }
 
 function mudarImagemFundoTema(nomeTema) {
+
   const bodyElement = document.querySelector("body");
   if (nomeTema === "light") {
-    bodyElement.style.backgroundImage = "url('../img/light-theme.jpg')";
+    if (verificaUrl()) {
+      bodyElement.style.backgroundImage = "url('../img/light-theme.jpg')";
+    }
+    else {
+      bodyElement.style.backgroundImage = "url('./img/light-theme.jpg')";
+    }
+
   } else if (nomeTema === "dark") {
-    bodyElement.style.backgroundImage = "url('../img/dark-theme.jpg')";
+
+    if (verificaUrl()) {
+      bodyElement.style.backgroundImage = "url('../img/dark-theme.jpg')";
+    }
+    else {
+      bodyElement.style.backgroundImage = "url('./img/dark-theme.jpg')";
+    }
   }
 }
+
+function verificaUrl() {
+  var http = new XMLHttpRequest();
+  var url = '../img/light-theme.jpg';
+    http.open('HEAD', url, false);
+    http.send();
+  return http.status != 404;
+}
+
 
 function getCookie(name) {
   const value = "; " + document.cookie;
