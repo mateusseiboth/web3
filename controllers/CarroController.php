@@ -12,27 +12,19 @@ class CarroController extends Controller
   }
 
   // Insere um novo carro
-  public function inserir()
+  public function salvar()
   {
     $carro = array();
     $carro['id'] = $_POST['id'];
     $carro['placa'] = $_POST['placa'];
     $carro['cliente_id'] = $_POST['cliente_id'];
     $carroModel = new Carro();
-    $carroModel->create($carro);
-    $this->redirect('carros/listar');
-  }
-
-  // Atualiza um carro existente
-  public function atualizar()
-  {
-    $carro = array();
-    $carro['id'] = $_POST['id'];
-    $carro['placa'] = $_POST['placa'];
-    $carro['cliente_id'] = $_POST['cliente_id'];
-    $carroModel = new Carro();
-    $carroModel->update($carro);
-    $this->redirect('carros/listar');
+    if ($carro['id'] == 0 || $carro['id'] == "" || $carro['id'] == null) {
+      $carroModel->create($carro);
+    } else {
+      $carroModel->update($carro);        
+    }
+    $this->redirect('carro/listar');
   }
 
   // Exclui um carro existente
@@ -40,7 +32,7 @@ class CarroController extends Controller
   {
     $carroModel = new Carro();
     $carroModel->delete($id);
-    $this->redirect('carros/listar');
+    $this->redirect('carro/listar');
   }
 }
 ?>
