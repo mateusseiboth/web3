@@ -119,7 +119,10 @@
             <a class="nav-link active" aria-current="page" href="<?php echo APP . 'cliente/listar' ?>">Clientes</a>
             <!-- Link para listar tickets -->
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?php echo APP . 'ticket/listar' ?>">Tickets</a>
+              <a class="nav-link active" aria-current="page" href="<?php echo APP . 'ticket/listar' ?>">Tickets ativos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="<?php echo APP . 'ticket/todos' ?>">Todos os tickets</a>
             </li>
         </ul>
 
