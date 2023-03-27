@@ -27,8 +27,7 @@
       if ($tipo['id'] == 0 || $tipo['id'] == "" || $tipo['id'] == null) {
         $model->create($tipo);
       } else {
-        $model->update($tipo);
-        
+        $model->update($tipo);        
       }
       $this->redirect("admin/listar");
     }
