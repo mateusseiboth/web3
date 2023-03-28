@@ -44,6 +44,20 @@
                     <input type='text' id='hora' class='form-control' placeholder='{$ticket['hora_entrada']}' disabled>
                 </div>
             </div>
+            <div class='mb-3'>
+                <label for='hora' class='form-label'>Hora de saida</label>
+                <div class='input-group col-md-6 mb-3'>
+                    <span class='input-group-text' id='basic-addon1'><i class='bi bi-clock-history text-success'></i></span>
+                    <input type='text' id='hora' class='form-control' placeholder='{$ticket['hora_saida']}' disabled>
+                </div>
+            </div>
+            <div class='mb-3'>
+                <label for='hora' class='form-label'>Total pago</label>
+                <div class='input-group col-md-6 mb-3'>
+                    <span class='input-group-text' id='basic-addon1'><i class='bi bi-clock-history text-success'></i></span>
+                    <input type='text' id='hora' class='form-control' placeholder='{$ticket['custo']}' disabled>
+                </div>
+            </div>
             ";
             if (!isset($todos['bol'])){
             echo "<a class='btn btn-danger' href='$pathFechar/{$ticket['ticket_id']}'>Encerrar Ticket</a>";
