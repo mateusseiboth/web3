@@ -61,7 +61,7 @@
       <div class="modal-body">
 
         <!-- Formulário de inserção/edição de clientes -->
-        <form method="POST" action="<?php echo APP . 'cliente/salvar'; ?>" id="form-client">
+        <form method="POST" action="<?php echo APP . 'cliente/salvar'; ?>" id="form-client" name="form-client">
           <input type="hidden" name="action" value="save_cliente">
           <input type="hidden" name="id" value="">
 
@@ -72,6 +72,7 @@
                 <i class="bi bi-spellcheck"></i>
               </span>
               <input type="text" name="nome" id="nome" class="form-control">
+              <small id="msgNome" class="form-text text-danger"></small>
             </div>
           </div>
 
@@ -82,6 +83,7 @@
                 <i class="bi bi-person-vcard"></i>
               </span>
               <input type="text" name="cpf" id="cpf" class="form-control">
+              <small id="msgCpf" class="form-text text-danger"></small>
             </div>
           </div>
 
@@ -92,6 +94,7 @@
                 <i class="bi bi-telephone"></i>
               </span>
               <input type="text" name="telefone" id="telefone" class="form-control">
+              <small id="msgTelefone" class="form-text text-danger"></small>
             </div>
           </div>
 
