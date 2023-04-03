@@ -17,7 +17,14 @@ class CarroController extends Controller
     $carro = array();
     $carro['id'] = $_POST['id'];
     $carro['placa'] = $_POST['placa'];
-    $carro['cliente_id'] = $_POST['cliente_id'];
+    
+
+    if ($_POST['cliente_id'] == '-1'){
+      $carro['cliente_id'] = 0;
+    } else {
+      $carro['cliente_id'] = $_POST['cliente_id'];
+    }
+
     $carroModel = new Carro();
     if ($carro['id'] == 0 || $carro['id'] == "" || $carro['id'] == null) {
       $carroModel->create($carro);

@@ -164,6 +164,9 @@
 </body>
 
 <?php isset($_GET['url']) ? $_url = '../JS/' : $_url = 'JS/';
-echo "<script src='$_url/tema.js' type='text/javascript'></script>" ?>
+echo "<script src='$_url/tema.js' type='text/javascript'></script>";
+echo "<script src='$_url/validar.js' type='text/javascript'></script>"  
+
+?>
 
 </html>

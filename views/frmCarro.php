@@ -57,7 +57,7 @@
       <div class="modal-body">
 
         <!-- Formulário de inserção carros -->
-        <form method="POST" action="<?php echo APP . 'carro/salvar'; ?>" id="form-car">
+        <form method="POST" action="<?php echo APP . 'carro/salvar'; ?>" id="form-car" name="form-car">
           <input type="hidden" name="action" value="save_car">
           <input type="hidden" name="id" value="">
           <div class="mb-3">
@@ -67,6 +67,7 @@
                 <i class="bi bi-car-front"></i>
               </span>
               <input type="text" name="placa" id="placa" class="form-control">
+              <small id="msgPlaca" name="msgPlaca" class="form-text text-danger"></small>
             </div>
           </div>
           <div class="mb-3">
