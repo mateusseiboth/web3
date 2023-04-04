@@ -124,6 +124,10 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="<?php echo APP . 'ticket/todos' ?>">Todos os tickets</a>
             </li>
+            <!-- Link para cadastrar usuario -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="<?php echo APP . 'login/cadastrar' ?>">Cadastrar Usuário</a>
+            </li>
         </ul>
 
         <!-- Itens do menu à direita -->

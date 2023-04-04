@@ -14,7 +14,7 @@
       <div class="modal-body">
 
         <!-- Formulário de inserção ticket -->
-        <form method="POST" action="<?php echo APP . 'ticket/create'; ?>" id="form-car">
+        <form method="POST" action="<?php echo APP . 'ticket/create'; ?>" id="form-ticket" name="form-ticket">
           <input type="hidden" name="action" value="save_car">
           <input type="hidden" name="id" value="">
           <div class="mb-3">
