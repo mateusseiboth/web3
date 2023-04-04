@@ -3,10 +3,32 @@ document.forms[0].onsubmit = function () {
     form = document.forms[0].name;
     console.log(form);
 
-    if (form == 'login') {
-        console.log('aqui');
+    if (form == 'login' || form == 'form-ticket') {
         formulario = true;
     }
+
+    if (form == 'form-user') {
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        if (username.value.length <= 0 || username.value.length > 20) {
+            document.querySelector("#msgUser").innerHTML = "Nome não pode estar em branco e deve ter menos de 20 caracteres";
+            document.querySelector("#msgUser").classList.add("border-danger");
+        } else {
+            document.querySelector("#msgUser").innerHTML = "";
+            document.querySelector("#msgUser").classList.remove("border-danger");
+            formulario = true;
+        } if (password.value.length <= 0 || password.value.length > 20) {
+            document.querySelector("#msgPassword").innerHTML = "Nome não pode estar em branco e deve ter menos de 20 caracteres";
+            document.querySelector("#msgPassword").classList.add("border-danger");
+        } else {
+            document.querySelector("#msgPassword").innerHTML = "";
+            document.querySelector("#msgPassword").classList.remove("border-danger");
+            formulario = true;
+        }
+
+    }
+        
+    
 
     if (form == 'form-car') {
         var placa = document.getElementById("placa");
