@@ -3,7 +3,12 @@ document.forms[0].onsubmit = function () {
     form = document.forms[0].name;
     console.log(form);
 
-    if (form === 'form-car') {
+    if (form == 'login') {
+        console.log('aqui');
+        formulario = true;
+    }
+
+    if (form == 'form-car') {
         var placa = document.getElementById("placa");
         if (placa.value.length <= 0 || placa.value.length > 20) {
             document.querySelector("#msgPlaca").innerHTML = "Nome não pode estar em branco e deve ter menos de 20 caracteres";
@@ -19,7 +24,7 @@ document.forms[0].onsubmit = function () {
 
     }
 
-    if (form === 'form-client'){
+    if (form == 'form-client'){
 
         formulario = true;
         var nome = document.getElementById("nome");
@@ -54,7 +59,7 @@ document.forms[0].onsubmit = function () {
         }
     }
 
-    if (form === 'form-tipo'){
+    if (form == 'form-tipo'){
         var preco = document.getElementById("preco");
         var descr = document.getElementById("descr");
         formulario = false;
@@ -77,7 +82,6 @@ document.forms[0].onsubmit = function () {
         }
 
     }
-
     return formulario;
 }
 
