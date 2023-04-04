@@ -17,7 +17,6 @@
         $_SESSION['id'] = $dados['id'];
         $_SESSION['logado'] = true;
     }
-
     
 
   }
