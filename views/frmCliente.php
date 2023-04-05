@@ -1,5 +1,5 @@
 <style>
-  h1 {
+  h1,p {
     text-align: center;
   }
 </style>
@@ -8,22 +8,12 @@
   <i class="bi bi-person-fill" style="font-size: 3rem"></i>
   <div class="">Clientes</div>
 </h1>
-
+<div class='row'>
 <!-- Tabela de clientes -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
   Novo cliente
 </button>
-<table class="table tabelinha" style="text-align: center; margin-top: 2em;">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nome</th>
-      <th scope="col">CPF</th>
-      <th scope="col">Telefone</th>
-      <th scope="col">Ações</th>
-    </tr>
-  </thead>
-  <tbody>
+
     <!-- Linhas da tabela serão preenchidas com dados do banco de dados -->
     <?php
     // Obtém o path para as ações de editar e excluir
@@ -32,23 +22,37 @@
 
     // Exibe cada cliente em uma linha da tabela
     foreach ($clientes as $cliente) {
-      echo "<tr>";
-      echo "<td>{$cliente['id']}</td>";
-      echo "<td>{$cliente['nome']}</td>";
-      echo "<td>{$cliente['cpf']}</td>";
-      echo "<td>{$cliente['telefone']}</td>";
-      echo "<td>
-              <button type='button' class='btn btn-primary btn-editar' data-bs-toggle='modal' data-bs-target='#myModal' 
+     
+echo "<div class='col-sm-4 col-md-4 col-lg-4' style='margin-top: 2rem;' onLoad='carregarTema()''>
+    <div id='cartao' class='card corzinha'>
+    
+        <div class='card-header' style='text-align: center;'>
+            <h5 class='card-title'>{$cliente['nome']}</h5>
+        </div>
+        <div class='card-body' style='text-align: center;'>
+            
+            <div class='mb-3'>
+                <label for='placa' class='form-label'>CPF: </label>
+                <div class='input-group col-md-6 mb-3'>
+                   <p>{$cliente['cpf']} </p>
+                </div>
+            </div>
+            <div class='mb-3'>
+                <label for='preco' class='form-label'>Telefone:</label>
+                <div class='input-group col-md-6 mb-3'>
+                    <p>{$cliente['telefone']}</p>
+                </div>
+            <div class='mb-6'>
+            <button type='button' class='btn btn-primary btn-editar' data-bs-toggle='modal' data-bs-target='#myModal' 
                 data-id='{$cliente['id']}' data-nome='{$cliente['nome']}' data-cpf='{$cliente['cpf']}' data-telefone='{$cliente['telefone']}''>
                 Editar
               </button>   
               <a href='$pathExcluir/{$cliente['id']}' class='btn btn-danger'>Excluir</a>
-            </td>";
-      echo "</tr>";
-    }
-    ?>
-  </tbody>
-</table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>"; }?>
 
 <!-- Criação da modal -->
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
