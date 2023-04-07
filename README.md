@@ -39,7 +39,7 @@ Este projeto foi desenvolvido como atividade da disciplina de Web III do curso d
 - Número de cadastros com relacionamento: **2**
 - Número de cadastros simples: **4**
 
-## 🏗️ Estrutura
+## 🏗 Estrutura
 
 O projeto segue uma estrutura MVC com as seguintes pastas:
 
