@@ -5,9 +5,8 @@ Este projeto foi desenvolvido como atividade da disciplina de Web III do curso d
 ## 🔖 Sumário
 
 - [Autores](#-autores)
-- [Pré-requisitos](#-pré-requisitos-e-observações)
+- [Pré-requisitos e observações](#-pré-requisitos-e-observações)
 - [Estrutura](#-estrutura)
-- [Diagrama de entidade](#-diagrama-de-entidade)
 - [Schemas](#-schemas)
   - [Carro](#carro)
   - [Cliente](#cliente)
@@ -98,8 +97,3 @@ O projeto segue uma estrutura MVC com as seguintes pastas:
 |-----------|-------------|
 | id        | `integer` (primary key) | 
 | estado    | `boolean` |
-
-
-
-
-
