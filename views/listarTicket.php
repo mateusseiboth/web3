@@ -10,7 +10,6 @@
         echo "
   <div class='col-sm-4 col-md-4 col-lg-4' style='margin-top: 2rem;' onLoad='carregarTema()''>
     <div id='cartao' class='card corzinha'>
-    
         <div class='card-header' style='text-align: center;'>
             <h5 class='card-title'> Ticket #{$ticket['ticket_id']}</h5>
         </div>
@@ -58,16 +57,12 @@
                     <input type='text' id='hora' class='form-control' placeholder='{$ticket['custo']}' disabled>
                 </div>
             </div>
-            ";
-            if (!isset($todos['bol'])){
-            echo "<a class='btn btn-danger' href='$pathFechar/{$ticket['ticket_id']}'>Encerrar Ticket</a>";
-            } else {
-                echo "
+            "; ?>
+            <?php if (!isset($todos['bol'])) { ?>
+                <a class='btn btn-danger' href='<?php echo $pathFechar . '/' . $ticket['ticket_id']; ?>'>Encerrar Ticket</a>
+            <?php } ?>
         </div>
     </div>
 </div>
-";
-}
-    }
-    ?>
+<?php } ?>
 </div>
